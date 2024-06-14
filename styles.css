@@ -1,0 +1,425 @@
+/* Genel Stiller */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #4e4e50;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#rules-button {
+    background-color: #9C27B0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+#exit-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+#rules-button:hover {
+    background-color: #7B1FA2;
+}
+
+#exit-button:hover {
+    background-color: #c0392b;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Çarkıfelek Bölümü Stilleri */
+#wheel-section {
+    margin-bottom: 30px;
+}
+
+#spin-button {
+    background-color: #e9c46a;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#spin-button:hover {
+    background-color: #f4a261;
+}
+
+/* Soru ve Cevap Kutucukları Stilleri */
+#question-section {
+    margin-bottom: 30px;
+}
+
+#question {
+    background-color: #6a2c70;
+    padding: 15px;
+    margin: 0 auto 20px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+#answer-container .letter-box {
+    display: inline-block;
+    background-color: #b83b5e;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+/* Alfabe Bölümü Stilleri */
+#alphabet-section {
+    margin-bottom: 30px;
+}
+
+#alphabet div {
+    display: inline-block;
+    background-color: #f08a5d;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#alphabet div:hover {
+    background-color: #b83b5e;
+}
+
+/* Soru ve Cevap Bölümü Stilleri */
+#question-section {
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+#question-container {
+    background-color: #6a2c70;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#question {
+    font-size: 1.25rem;
+    color: #fff;
+    margin: 0;
+}
+
+#answer-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.letter-box {
+    background-color: #f94144;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Doğru tahmin edilen harflerin stilleri */
+.correct-answer {
+    background-color: #90be6d;
+}
+
+/* Yanlış tahmin edilen harflerin stilleri */
+.wrong-answer {
+    background-color: #f94144;
+}
+
+/* Alfabe Bölümü Stilleri */
+#alphabet-section {
+    margin: 20px 0;
+}
+
+#alphabet div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#alphabet div:hover {
+    background-color: #444;
+    transform: translateY(-3px);
+}
+
+#alphabet div:active {
+    transform: translateY(2px);
+}
+
+/* Skor Bölümü Stilleri */
+#score-section {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+}
+
+#current-score {
+    font-size: 1.5rem;
+    color: #4dff4d;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+#score-value {
+    font-weight: bold;
+}
+
+/* Modal Stilleri */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#completion-message, #final-score-message {
+    font-size: 2rem;
+    color: #ffcd38;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#restart-button, #restart-completed-button, #close-rules-button {
+    background-color: #9C27B0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#exit-modal-button, #exit-completed-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#restart-button:hover, #restart-completed-button:hover, #close-rules-button:hover {
+    background-color: #7B1FA2;
+}
+
+#exit-modal-button:hover, #exit-completed-button:hover {
+    background-color: #c0392b;
+}
+
+/* Buton Hover ve Active Stilleri */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+
+button:active {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    transform: scale(0.95);
+}
+
+/* Etkileşimli Elementler için Genel Stil Ayarları */
+.interactive:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+.interactive:active {
+    filter: brightness(1);
+    transform: translateY(1px);
+}
+
+/* Sayfa Öğeleri için Daha Fazla Görsel Ayrıntı */
+section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    max-width: 800px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    #question, .letter-box, #final-score-message, button {
+        font-size: smaller;
+    }
+
+    .letter-box {
+        width: 35px;
+        height: 35px;
+    }
+
+    #wheel {
+        width: 250px;
+        height: 250px;
+    }
+
+    #alphabet div {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+#wheelOfFortune {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    left: 60px;
+}
+
+#wheel {
+    display: block;
+}
+
+#spin {
+    font: 1.5rem/0 sans-serif;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 30%;
+    margin: -15%;
+    background: #fff;
+    color: #fff;
+    box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    transition: 0.8s;
+}
+
+#spin::after {
+    content: "";
+    position: absolute;
+    top: -17px;
+    border: 10px solid transparent;
+    border-bottom-color: currentColor;
+    border-top: none;
+}

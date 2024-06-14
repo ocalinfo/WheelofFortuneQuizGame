@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel of Fortune Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Wheel of Fortune Quiz Game</h1>
+        <button id="rules-button">Rules</button>
+        <button id="exit-button">Exit</button> <!-- Exit button added below rules button -->
+    </header>
+    <main>
+        <section id="wheel-section">
+            <button id="spin-button">Spin the Wheel</button>
+            <div id="wheelOfFortune">
+                <canvas id="wheel" width="300" height="300"></canvas>
+                <div id="spin">SPIN</div>
+            </div>
+        </section>
+        <section id="question-section">
+            <div id="question-container">
+                <p id="question">Question will appear here...</p>
+            </div>
+            <div id="answer-container">
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+            </div>
+        </section>
+        <section id="alphabet-section">
+            <div id="alphabet"></div>
+        </section>
+        <section id="score-section">
+            <div id="current-score">
+                <p>Current Score: <span id="score-value">0</span></p>
+            </div>
+        </section>
+    </main>
+    <div id="game-over-modal" class="modal">
+        <div class="modal-content">
+            <p id="final-score-message"></p>
+            <button id="restart-button">Restart Game</button>
+            <button id="exit-modal-button">Exit</button> <!-- Exit button added in game over modal -->
+        </div>
+    </div>
+    <div id="game-completed-modal" class="modal">
+        <div class="modal-content">
+            <p id="completion-message"></p>
+            <button id="restart-completed-button">Restart Game</button>
+            <button id="exit-completed-button">Exit</button> <!-- Exit button added in game completed modal -->
+        </div>
+    </div>
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="rules-close">&times;</span>
+            <h2>Game Rules</h2>
+            <ul>
+                <li>Spin the wheel to receive a question.</li>
+                <li>Select letters to guess the answer.</li>
+                <li>You have three chances to guess incorrectly.</li>
+                <li>If you guess correctly, you earn points based on the wheel segment.</li>
+                <li>Reach 1000 points to win the game.</li>
+                <li>If you guess incorrectly three times, the game is over.</li>
+            </ul>
+            <button id="close-rules-button">Close</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Wheel of Fortune Quiz Game</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
